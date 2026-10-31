@@ -1,0 +1,260 @@
+{
+  "rows": 7043,
+  "columns": 21,
+  "raw_dtypes": {
+    "customerID": "object",
+    "gender": "object",
+    "SeniorCitizen": "object",
+    "Partner": "object",
+    "Dependents": "object",
+    "tenure": "object",
+    "PhoneService": "object",
+    "MultipleLines": "object",
+    "InternetService": "object",
+    "OnlineSecurity": "object",
+    "OnlineBackup": "object",
+    "DeviceProtection": "object",
+    "TechSupport": "object",
+    "StreamingTV": "object",
+    "StreamingMovies": "object",
+    "Contract": "object",
+    "PaperlessBilling": "object",
+    "PaymentMethod": "object",
+    "MonthlyCharges": "object",
+    "TotalCharges": "object",
+    "Churn": "object"
+  },
+  "parsed_dtypes": {
+    "customerID": "string",
+    "gender": "string",
+    "SeniorCitizen": "string",
+    "Partner": "string",
+    "Dependents": "string",
+    "tenure": "float64",
+    "PhoneService": "string",
+    "MultipleLines": "string",
+    "InternetService": "string",
+    "OnlineSecurity": "string",
+    "OnlineBackup": "string",
+    "DeviceProtection": "string",
+    "TechSupport": "string",
+    "StreamingTV": "string",
+    "StreamingMovies": "string",
+    "Contract": "string",
+    "PaperlessBilling": "string",
+    "PaymentMethod": "string",
+    "MonthlyCharges": "float64",
+    "TotalCharges": "float64",
+    "Churn": "string"
+  },
+  "raw_nulls": {
+    "customerID": 0,
+    "gender": 0,
+    "SeniorCitizen": 0,
+    "Partner": 0,
+    "Dependents": 0,
+    "tenure": 0,
+    "PhoneService": 0,
+    "MultipleLines": 0,
+    "InternetService": 0,
+    "OnlineSecurity": 0,
+    "OnlineBackup": 0,
+    "DeviceProtection": 0,
+    "TechSupport": 0,
+    "StreamingTV": 0,
+    "StreamingMovies": 0,
+    "Contract": 0,
+    "PaperlessBilling": 0,
+    "PaymentMethod": 0,
+    "MonthlyCharges": 0,
+    "TotalCharges": 0,
+    "Churn": 0
+  },
+  "blank_cells": {
+    "customerID": 0,
+    "gender": 0,
+    "SeniorCitizen": 0,
+    "Partner": 0,
+    "Dependents": 0,
+    "tenure": 0,
+    "PhoneService": 0,
+    "MultipleLines": 0,
+    "InternetService": 0,
+    "OnlineSecurity": 0,
+    "OnlineBackup": 0,
+    "DeviceProtection": 0,
+    "TechSupport": 0,
+    "StreamingTV": 0,
+    "StreamingMovies": 0,
+    "Contract": 0,
+    "PaperlessBilling": 0,
+    "PaymentMethod": 0,
+    "MonthlyCharges": 0,
+    "TotalCharges": 11,
+    "Churn": 0
+  },
+  "duplicates": 0,
+  "duplicate_ids": 0,
+  "whitespace_cells": {
+    "customerID": 0,
+    "gender": 0,
+    "SeniorCitizen": 0,
+    "Partner": 0,
+    "Dependents": 0,
+    "tenure": 0,
+    "PhoneService": 0,
+    "MultipleLines": 0,
+    "InternetService": 0,
+    "OnlineSecurity": 0,
+    "OnlineBackup": 0,
+    "DeviceProtection": 0,
+    "TechSupport": 0,
+    "StreamingTV": 0,
+    "StreamingMovies": 0,
+    "Contract": 0,
+    "PaperlessBilling": 0,
+    "PaymentMethod": 0,
+    "MonthlyCharges": 0,
+    "TotalCharges": 11,
+    "Churn": 0
+  },
+  "missing_after_numeric_parse": {
+    "customerID": 0,
+    "gender": 0,
+    "SeniorCitizen": 0,
+    "Partner": 0,
+    "Dependents": 0,
+    "tenure": 0,
+    "PhoneService": 0,
+    "MultipleLines": 0,
+    "InternetService": 0,
+    "OnlineSecurity": 0,
+    "OnlineBackup": 0,
+    "DeviceProtection": 0,
+    "TechSupport": 0,
+    "StreamingTV": 0,
+    "StreamingMovies": 0,
+    "Contract": 0,
+    "PaperlessBilling": 0,
+    "PaymentMethod": 0,
+    "MonthlyCharges": 0,
+    "TotalCharges": 11,
+    "Churn": 0
+  },
+  "class_counts": {
+    "No": 5174,
+    "Yes": 1869
+  },
+  "rows_deleted": 0,
+  "numeric_summary": {
+    "tenure": {
+      "count": 7043.0,
+      "mean": 32.37114865824223,
+      "std": 24.55948102309446,
+      "min": 0.0,
+      "25%": 9.0,
+      "50%": 29.0,
+      "75%": 55.0,
+      "max": 72.0
+    },
+    "MonthlyCharges": {
+      "count": 7043.0,
+      "mean": 64.76169246059918,
+      "std": 30.090047097678493,
+      "min": 18.25,
+      "25%": 35.5,
+      "50%": 70.35,
+      "75%": 89.85,
+      "max": 118.75
+    },
+    "TotalCharges": {
+      "count": 7032.0,
+      "mean": 2283.3004408418656,
+      "std": 2266.771361883145,
+      "min": 18.8,
+      "25%": 401.45,
+      "50%": 1397.475,
+      "75%": 3794.7375,
+      "max": 8684.8
+    }
+  },
+  "categories": {
+    "gender": [
+      "Female",
+      "Male"
+    ],
+    "SeniorCitizen": [
+      "0",
+      "1"
+    ],
+    "Partner": [
+      "No",
+      "Yes"
+    ],
+    "Dependents": [
+      "No",
+      "Yes"
+    ],
+    "PhoneService": [
+      "No",
+      "Yes"
+    ],
+    "MultipleLines": [
+      "No",
+      "No phone service",
+      "Yes"
+    ],
+    "InternetService": [
+      "DSL",
+      "Fiber optic",
+      "No"
+    ],
+    "OnlineSecurity": [
+      "No",
+      "No internet service",
+      "Yes"
+    ],
+    "OnlineBackup": [
+      "No",
+      "No internet service",
+      "Yes"
+    ],
+    "DeviceProtection": [
+      "No",
+      "No internet service",
+      "Yes"
+    ],
+    "TechSupport": [
+      "No",
+      "No internet service",
+      "Yes"
+    ],
+    "StreamingTV": [
+      "No",
+      "No internet service",
+      "Yes"
+    ],
+    "StreamingMovies": [
+      "No",
+      "No internet service",
+      "Yes"
+    ],
+    "Contract": [
+      "Month-to-month",
+      "One year",
+      "Two year"
+    ],
+    "PaperlessBilling": [
+      "No",
+      "Yes"
+    ],
+    "PaymentMethod": [
+      "Bank transfer (automatic)",
+      "Credit card (automatic)",
+      "Electronic check",
+      "Mailed check"
+    ]
+  },
+  "sha256": "88be4b93fbe0cc83421af1c503794c97c342eca914c1576db7c276e61d61358a",
+  "handling": "Trim whitespace; parse numeric charges; preserve all rows. Blank TotalCharges stays NaN until training-fold median imputation with a missingness indicator. Strict schema, domain and service-consistency checks pass."
+}

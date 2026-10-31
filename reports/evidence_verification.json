@@ -1,0 +1,28 @@
+{
+  "source_hash_verified": true,
+  "target_alignment_verified": true,
+  "split_membership_verified": true,
+  "independent_test_metrics": {
+    "accuracy": 0.673527324343506,
+    "precision": 0.4435695538057743,
+    "recall": 0.9037433155080213,
+    "f1": 0.5950704225352113,
+    "brier": 0.1413854151395083,
+    "roc_auc": 0.8326797385620915,
+    "average_precision": 0.6223018472168168
+  },
+  "confusion_matrix": [
+    [
+      611,
+      424
+    ],
+    [
+      36,
+      338
+    ]
+  ],
+  "all_segment_counts_and_rates_reconciled": true,
+  "shap_sum_verified": true,
+  "browser_batch_download_reconciled": true,
+  "scope": "Frozen output verification only; no tuning, retraining or policy changes."
+}

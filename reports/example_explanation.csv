@@ -1,0 +1,48 @@
+feature,contribution,direction
+numeric__tenure,1.6236543413257354,Increases risk
+numeric__TotalCharges,-0.6122555634854363,Decreases risk
+numeric__MonthlyCharges,0.4881631916411259,Increases risk
+category__InternetService_DSL,-0.34872609528656906,Decreases risk
+category__Contract_Month-to-month,0.29561687911206946,Increases risk
+category__InternetService_Fiber optic,-0.2302338468228319,Decreases risk
+category__PaperlessBilling_No,-0.19040951978760165,Decreases risk
+category__PhoneService_Yes,0.1813110596307291,Increases risk
+category__Contract_Two year,0.13944344377493334,Increases risk
+category__MultipleLines_No,0.12766760950764877,Increases risk
+category__StreamingMovies_No,-0.11764176030968554,Decreases risk
+category__StreamingTV_No,-0.09635061592418455,Decreases risk
+category__TechSupport_No,0.09183087432366074,Increases risk
+category__Dependents_Yes,0.09052394312749708,Increases risk
+category__gender_Female,0.08439623558634811,Increases risk
+category__PaymentMethod_Electronic check,-0.08028624834372236,Decreases risk
+category__PaymentMethod_Mailed check,-0.07407598919953318,Decreases risk
+category__TechSupport_Yes,0.07075394789807495,Increases risk
+category__StreamingMovies_Yes,-0.06707650801204289,Decreases risk
+category__MultipleLines_No phone service,-0.06671876497138352,Decreases risk
+category__PhoneService_No,-0.06671876497138352,Decreases risk
+category__Partner_Yes,0.06573763124903383,Increases risk
+category__Partner_No,-0.06323787754406082,Decreases risk
+category__OnlineSecurity_No,0.06312142788016274,Increases risk
+category__gender_Male,-0.057807530518854934,Decreases risk
+category__PaymentMethod_Credit card (automatic),0.05665768749333212,Increases risk
+category__StreamingTV_Yes,-0.05249674473426752,Decreases risk
+category__InternetService_No,0.046527345876466945,Increases risk
+category__OnlineBackup_No internet service,0.046527345876466945,Increases risk
+category__OnlineSecurity_No internet service,0.046527345876466945,Increases risk
+category__StreamingTV_No internet service,0.046527345876466945,Increases risk
+category__StreamingMovies_No internet service,0.046527345876466945,Increases risk
+category__DeviceProtection_No internet service,0.046527345876466945,Increases risk
+category__TechSupport_No internet service,0.046527345876466945,Increases risk
+category__SeniorCitizen_0,-0.038708598017506535,Decreases risk
+category__PaymentMethod_Bank transfer (automatic),0.035667641189854986,Increases risk
+category__OnlineSecurity_Yes,0.03504413929456381,Increases risk
+category__Contract_One year,0.03503141802085875,Increases risk
+category__PaperlessBilling_Yes,-0.03497749637027704,Decreases risk
+category__MultipleLines_Yes,-0.030817715538157806,Decreases risk
+category__OnlineBackup_Yes,0.02562988550121632,Increases risk
+category__OnlineBackup_No,0.024639703881282938,Increases risk
+category__DeviceProtection_No,-0.019433935842470218,Decreases risk
+category__SeniorCitizen_1,0.010897366902911217,Increases risk
+category__DeviceProtection_Yes,-0.003104660476059973,Decreases risk
+category__Dependents_No,-0.002073858057288771,Decreases risk
+numeric__missingindicator_TotalCharges,-8.408962166324418e-18,Decreases risk

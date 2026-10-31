@@ -1,0 +1,47 @@
+{
+  "date": "2026-10-30",
+  "tool": "Playwright CLI 0.1.18 / Chrome",
+  "pages": [
+    {
+      "page": "Executive Overview",
+      "charts": 3
+    },
+    {
+      "page": "Customer Analytics",
+      "charts": 4
+    },
+    {
+      "page": "Churn Prediction",
+      "submitted_probability_display": "21.9%",
+      "shap_rendered": true
+    },
+    {
+      "page": "Batch CSV",
+      "rows": 5,
+      "download": "batch_predictions.csv"
+    },
+    {
+      "page": "Model Performance",
+      "charts": 6
+    },
+    {
+      "page": "Retention Strategy Simulator",
+      "charts": 1
+    },
+    {
+      "page": "About the Project",
+      "report_downloads": 3
+    }
+  ],
+  "widths": [
+    375,
+    768,
+    1024,
+    1440
+  ],
+  "horizontal_document_overflow_at_checked_widths": false,
+  "reduced_motion_checked": true,
+  "theme": "light",
+  "screenshots": "assets/screenshots",
+  "scope": "Local Windows browser checks; no hosted deployment or full accessibility certification."
+}

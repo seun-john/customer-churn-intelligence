@@ -1,0 +1,4 @@
+MultipleLines,customers,churned,churn_rate
+No,3390,849,0.2504424778761062
+No phone service,682,170,0.24926686217008798
+Yes,2971,850,0.286098956580276
