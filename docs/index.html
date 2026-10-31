@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore customer churn, test an explainable prediction, and understand the cost of retention decisions. An interactive IBM Telco portfolio case study.">
+  <meta name="theme-color" content="#142D31">
+  <title>Churn Intelligence | Customer retention, explained</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="app.mjs"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to main content</a>
+  <aside class="sidebar">
+    <a class="brand" href="#overview" aria-label="Churn Intelligence overview"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>Churn<span class="brand-light">Intelligence</span></span></a>
+    <div class="workspace-label">CUSTOMER RETENTION LAB</div>
+    <nav aria-label="Main navigation">
+      <a href="#overview" data-view="overview"><span class="nav-number">01</span> The business question</a>
+      <a href="#patterns" data-view="patterns"><span class="nav-number">02</span> Explore the patterns</a>
+      <a href="#predict" data-view="predict"><span class="nav-number">03</span> Try a prediction</a>
+      <a href="#simulator" data-view="simulator"><span class="nav-number">04</span> Plan a campaign</a>
+      <a href="#evidence" data-view="evidence"><span class="nav-number">05</span> Check the evidence</a>
+      <a href="#about" data-view="about"><span class="nav-number">06</span> About this project</a>
+    </nav>
+    <div class="sidebar-bottom"><div class="sample-tag"><span aria-hidden="true"></span> FICTIONAL DATASET</div><p>A working case study in better retention decisions.</p><a href="https://github.com/seun-john/customer-churn-intelligence" target="_blank" rel="noopener noreferrer">View the source <span aria-hidden="true">↗</span></a></div>
+  </aside>
+  <div class="main-shell">
+    <header class="topbar"><span>TELECOM / CUSTOMER INTELLIGENCE</span><span class="local-status">Runs in your browser</span></header>
+    <main id="main" tabindex="-1">
+      <div id="loading" role="status" class="loading"><span class="eyebrow">CUSTOMER RETENTION</span><h1>Turning churn scores into useful decisions.</h1><p>Loading the verified model and analytical evidence...</p></div>
+      <div id="application" hidden></div>
+      <noscript><div class="notice">Enable JavaScript to use the interactive analysis. <a href="https://github.com/seun-john/customer-churn-intelligence/blob/main/reports/analytical_report.md">Read the analytical report</a> as an alternative.</div></noscript>
+    </main>
+    <footer>IBM Telco fictional sample · Cross-sectional analysis · No validated future forecast or measured retention lift</footer>
+  </div>
+</body>
+</html>
