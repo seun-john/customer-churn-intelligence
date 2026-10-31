@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.cache/
+.playwright-cli/
+*.py[cod]
+.env
+.streamlit/secrets.toml
+data/raw/*.zip
+data/raw/*.csv
+data/processed/*.csv
+*.log
+test-results/
+release/
