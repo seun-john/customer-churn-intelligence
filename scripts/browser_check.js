@@ -1,0 +1,70 @@
+async page => {
+  const out='.';
+  const checks=[];
+  async function ready(n=0) {
+    if(n) await page.waitForFunction(n => [...document.querySelectorAll('.js-plotly-plot')].filter(el=>el._fullLayout).length>=n,n,{timeout:60000});
+    await page.waitForFunction(()=>document.querySelector('[data-testid="stApp"]')?.getAttribute('data-test-script-state')==='notRunning',null,{timeout:60000});
+  }
+  await page.setViewportSize({width:1440,height:1400});
+  if ((await page.getByTestId('stSidebar').boundingBox()).x < 0) await page.getByTestId('stBaseButton-headerNoPadding').nth(1).click();
+  await page.getByTestId('stSidebar').getByText('Executive Overview',{exact:true}).click();
+  await page.getByRole('heading',{name:'Understand churn. Focus the review.',exact:true}).waitFor();
+  await ready(3);
+  await page.screenshot({path:out+'/assets/screenshots/executive-overview.png',fullPage:true});
+  checks.push({page:'Executive Overview',charts:await page.locator('.js-plotly-plot').count()});
+  await page.getByTestId('stSidebar').getByText('Customer Analytics',{exact:true}).click();
+  await page.getByRole('heading',{name:'Customer analytics',exact:true}).waitFor();
+  await page.getByText('Customers selected',{exact:true}).waitFor();
+  await ready(3);
+  await page.screenshot({path:out+'/assets/screenshots/customer-analytics.png',fullPage:true});
+  checks.push({page:'Customer Analytics',charts:await page.locator('.js-plotly-plot').count()});
+  await page.getByTestId('stSidebar').getByText('Churn Prediction',{exact:true}).click();
+  await page.getByRole('button',{name:'Predict Churn',exact:true}).click();
+  await page.getByText('Estimated churn probability',{exact:true}).waitFor();
+  await page.getByRole('heading',{name:'What moved this prediction?',exact:true}).waitFor();
+  await ready(1);
+  await page.getByRole('heading',{name:'Last submitted customer',exact:true}).evaluate(el=>el.scrollIntoView({block:'start'}));
+  await page.screenshot({path:out+'/assets/screenshots/churn-prediction.png',fullPage:true});
+  checks.push({page:'Churn Prediction',probability:await page.getByTestId('stMetricValue').first().innerText()});
+  await page.getByRole('tab',{name:'Batch CSV',exact:true}).click();
+  const templatePromise=page.waitForEvent('download');
+  await page.getByRole('button',{name:'Download example input CSV',exact:true}).click();
+  const template=await templatePromise;
+  await template.saveAs(out+'/reports/browser-batch-template.csv');
+  await page.getByTestId('stFileUploader').locator('input[type=file]').setInputFiles(out+'/reports/browser-batch-template.csv');
+  await page.getByText('Validated and scored 5 customers.',{exact:true}).waitFor();
+  const downloadPromise=page.waitForEvent('download');
+  await page.getByRole('button',{name:'Download batch predictions',exact:true}).click();
+  const download=await downloadPromise;
+  await download.saveAs(out+'/reports/browser-batch-predictions.csv');
+  checks.push({page:'Batch CSV',rows:5,download:download.suggestedFilename()});
+  await page.getByTestId('stSidebar').getByText('Model Performance',{exact:true}).click();
+  await page.getByRole('heading',{name:'Model performance',exact:true}).waitFor();
+  await page.getByText('Average Precision',{exact:true}).waitFor();
+  await ready(5);
+  await page.getByRole('heading',{name:'Model performance',exact:true}).evaluate(el=>el.scrollIntoView({block:'start'}));
+  await page.screenshot({path:out+'/assets/screenshots/model-performance.png',fullPage:true});
+  checks.push({page:'Model Performance',charts:await page.locator('.js-plotly-plot').count()});
+  await page.getByTestId('stSidebar').getByText('Retention Strategy Simulator',{exact:true}).click();
+  await page.getByRole('heading',{name:'Retention strategy simulator',exact:true}).waitFor();
+  await page.getByText('Conditional net contribution',{exact:true}).waitFor();
+  await ready(1);
+  await page.screenshot({path:out+'/assets/screenshots/retention-simulator.png',fullPage:true});
+  checks.push({page:'Retention Strategy Simulator',charts:await page.locator('.js-plotly-plot').count()});
+  await page.getByTestId('stSidebar').getByText('About the Project',{exact:true}).click();
+  await page.getByRole('heading',{name:'About the project',exact:true}).waitFor();
+  await ready();
+  checks.push({page:'About the Project',reportDownloads:await page.getByRole('button',{name:/Download/}).count()});
+  await page.getByTestId('stSidebar').getByText('Executive Overview',{exact:true}).click();
+  await page.getByRole('heading',{name:'Understand churn. Focus the review.',exact:true}).waitFor();
+  await ready(3);
+  for (const width of [375,768,1024]) {
+    await page.setViewportSize({width,height:1000});
+    await page.emulateMedia({reducedMotion:'reduce'});
+    await ready(3);
+    await page.screenshot({path:out+'/assets/screenshots/overview-'+width+'.png',fullPage:true});
+    checks.push({viewport:width,layout:await page.evaluate(()=>({viewport:innerWidth,document:document.documentElement.scrollWidth,main:document.querySelector('[data-testid="stMain"]')?.getBoundingClientRect().width}))});
+  }
+  await page.setViewportSize({width:1440,height:1400});
+  return checks;
+}
