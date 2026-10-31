@@ -6,7 +6,7 @@ requires-python = ">=3.11,<3.13"
 license = "MIT"
 
 [tool.pytest.ini_options]
-addopts = "--basetemp=.cache/pytest -p no:cacheprovider"
+addopts = "--basetemp=.pytest-tmp -p no:cacheprovider"
 pythonpath = ["."]
 testpaths = ["tests"]
 filterwarnings = ["ignore:.*use_container_width.*:DeprecationWarning"]
