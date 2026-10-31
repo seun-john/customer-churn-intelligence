@@ -10,19 +10,21 @@ EXCLUDE = {
     'reports/pytest-results.xml', 'reports/pytest-app-results.xml',
     'reports/browser-batch-template.csv', 'reports/browser-batch-predictions.csv',
     'data/raw/WA_Fn-UseC_-Telco-Customer-Churn.csv', 'data/processed/customers.csv',
+    'reports/github_publication.json', 'reports/pytest-pages-results.xml',
 }
 
 def main():
     manifest = ROOT / 'reports/file_manifest.txt'
-    if manifest.exists():
-        paths = manifest.read_text().splitlines()
-    else:
-        allowed_dirs = {'app', 'assets', 'data', 'models', 'reports', 'scripts', 'src', 'tests', '.github', '.streamlit'}
-        paths = [p.relative_to(ROOT).as_posix() for p in ROOT.rglob('*')
-                 if p.is_file() and (len(p.relative_to(ROOT).parts) == 1 or p.relative_to(ROOT).parts[0] in allowed_dirs)
-                 and '__pycache__' not in p.parts and p.suffix not in {'.pyc', '.zip', '.log'}]
+    paths = manifest.read_text().splitlines() if manifest.exists() else []
+    allowed_dirs = {'app', 'assets', 'data', 'models', 'reports', 'scripts', 'src', 'tests', 'docs', '.github', '.streamlit'}
+    root_files = {'.env.example', '.gitignore', '.python-version', 'DEPLOYMENT.md', 'LICENSE', 'README.md', 'launch.ps1', 'pyproject.toml', 'requirements.lock.txt', 'requirements.txt'}
+    for directory in allowed_dirs:
+        for p in (ROOT/directory).rglob('*'):
+            if p.is_file() and '__pycache__' not in p.parts and p.suffix not in {'.pyc', '.zip', '.log'}:
+                paths.append(p.relative_to(ROOT).as_posix())
+    paths.extend(root_files)
     paths += ['scripts/package_github.py']
-    paths = sorted(set(p for p in paths if p not in EXCLUDE and not p.startswith('design-system/')))
+    paths = sorted(set(p for p in paths if p not in EXCLUDE and p not in {'.env', '.streamlit/secrets.toml'} and not p.startswith('design-system/') and not (p.startswith('reports/pytest') and p.endswith('.xml'))))
     OUTPUT.parent.mkdir(exist_ok=True)
     with zipfile.ZipFile(OUTPUT, 'w', zipfile.ZIP_DEFLATED) as archive:
         for relative in paths:
