@@ -1,0 +1,24 @@
+:root { --ink:#162C3B; --muted:#526776; --teal:#087F72; --line:#DDE5E9; }
+.stApp { font-family:'Segoe UI',Arial,sans-serif; }
+.block-container { max-width:1480px; padding-top:3.8rem; padding-bottom:3rem; }
+[data-testid="stSidebar"] { border-right:1px solid var(--line); }
+[data-testid="stSidebar"] .block-container { padding-top:2rem; }
+.brand { background:#162C3B; color:white; border-radius:12px; padding:22px; margin-bottom:25px; }
+.brand-name { font-size:23px; font-weight:750; letter-spacing:-.6px; }
+.brand small { color:#BFD8DD; letter-spacing:1.6px; font-size:11px; }
+.eyebrow { color:var(--teal); text-transform:uppercase; letter-spacing:2px; font-size:12px; font-weight:700; margin-bottom:8px; }
+h1 { font-size:2.5rem!important; letter-spacing:-1.3px; font-weight:720!important; line-height:1.15!important; padding-top:0!important; }
+h2 { font-size:1.35rem!important; letter-spacing:-.3px; }
+h3 { font-size:1.1rem!important; }
+.subtitle { color:var(--muted); max-width:850px; font-size:16px; line-height:1.6; margin-bottom:24px; }
+.scope { border:1px solid #C7DDDC; border-left:4px solid var(--teal); background:#EFF7F5; padding:12px 16px; color:#315B57; border-radius:6px; font-size:13px; margin-bottom:24px; }
+[data-testid="stMetric"] { background:white; border:1px solid var(--line); border-radius:10px; padding:18px 22px; }
+[data-testid="stMetricLabel"] { color:var(--muted); font-size:13px; }
+[data-testid="stMetricValue"] { font-size:2rem; font-weight:650; letter-spacing:-1px; }
+[data-testid="stVerticalBlockBorderWrapper"] > div { border-color:var(--line)!important; border-radius:12px!important; }
+.stButton>button, .stDownloadButton>button { min-height:44px; border-radius:7px; font-weight:600; transition:background .16s; }
+button:focus-visible, input:focus-visible { outline:3px solid #3B6794!important; outline-offset:2px; }
+.stCaption { color:var(--muted); }
+.footer { border-top:1px solid var(--line); margin-top:32px; padding-top:15px; color:var(--muted); font-size:12px; }
+@media(max-width:640px) { h1 {font-size:2rem!important;} .block-container {padding:3.8rem 1rem 2rem;} [data-testid="stMetric"] {padding:12px;} }
+@media(prefers-reduced-motion:reduce) { *,*::before,*::after {transition:none!important;animation:none!important;} }
